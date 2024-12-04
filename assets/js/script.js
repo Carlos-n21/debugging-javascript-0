@@ -43,6 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
             let answers = '';
 
             for (let letter in currentQuestion.answers) {
+                console.log(questionNletter);
                 answers = `
                 <label>
                     <input type="radio" name="question${questionNumber}" value="${letter}">
@@ -81,6 +82,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         button.innerHTML = 'Try Again';
         button.removeEventListener('click', showResults);
+        button.addEventListener('click', resetQuiz);
     }
 
     function resetQuiz() {
@@ -92,6 +94,5 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     buildQuiz();
-
     button.addEventListener('click', showResults);
 });
